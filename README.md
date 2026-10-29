@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.8--3.11-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0+-orange.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-latest-green.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
@@ -105,31 +105,33 @@ independently reproducible benchmark or as evidence of a production model.
 
 ## 🔧 Installation
 
+The pinned [requirements](requirements.txt) include `tensorflow==2.13.0`, whose
+[tested build configurations](https://www.tensorflow.org/install/source#tested_build_configurations)
+list Python **3.8–3.11**. Use **CPython 3.11** for the commands below. Python 3.12 and
+newer are outside that tested range and need separate dependency validation.
+
 ```bash
-# Clone the repository
 git clone https://github.com/Chris0Jeky/AI-Data-Analytics-Suite-Python.git
 cd AI-Data-Analytics-Suite-Python
-
-# Create virtual environment
-python -m venv venv
 ```
 
-Activate it on macOS or Linux with Bash:
+Create and activate the environment on macOS or Linux:
 
 ```bash
+python3.11 -m venv venv
 source venv/bin/activate
 ```
 
-Or activate it on Windows with PowerShell:
+Or on Windows with PowerShell and the Python launcher:
 
 ```powershell
+py -3.11 -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
-Then install the dependencies:
+With that environment active, install the dependencies:
 
 ```bash
-# Install dependencies
 python -m pip install -r requirements.txt
 
 # Optional: download GloVe embeddings for experiments that need them
@@ -137,8 +139,9 @@ wget http://nlp.stanford.edu/data/glove.6B.zip
 unzip glove.6B.zip -d data/
 ```
 
-`setup.sh` automates a similar setup for Bash-compatible shells. It is optional; on Windows, use
-the PowerShell activation and dependency-install commands above rather than invoking the script.
+`setup.sh` is optional and uses the shell's unqualified `python`; it does not select or
+enforce this version range. Check `python --version` before using it. On Windows, use
+the PowerShell environment commands above and the dependency-install command instead.
 
 ## 🚀 Quick Start
 
