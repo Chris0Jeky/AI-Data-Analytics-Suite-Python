@@ -110,6 +110,9 @@ The pinned [requirements](requirements.txt) include `tensorflow==2.13.0`, whose
 list Python **3.8–3.11**. Use **CPython 3.11** for the commands below. Python 3.12 and
 newer are outside that tested range and need separate dependency validation.
 
+The Python badge reflects TensorFlow 2.13's published range, not a verified full-project or
+platform support matrix.
+
 ```bash
 git clone https://github.com/Chris0Jeky/AI-Data-Analytics-Suite-Python.git
 cd AI-Data-Analytics-Suite-Python
